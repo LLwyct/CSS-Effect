@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+$border-radius-size: 14px;
+$barbarian: #EC9B3B;
+$giant: #784b34;
+
+*, *::before,*::after {
+    box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font: 14px/20px "Lato", Arial, sans-serif;
+  color: #7c7c7c;
+  margin-top: 30px;
+}
+
+.slider-container {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.warpper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+
+    &:focus{
+        outline: 0;
+    }
+}
+
+
+.clash-card {
+    background: white;
+    width: 300px;
+    display: inline-block;
+    margin: auto;
+    border-radius: $border-radius-size + 5;
+    position: relative;
+    text-align: center;
+    z-index: 9999;
+    box-shadow: 10px 20px 30px -20px black;
+}
+
+.clash-card__image {
+    position: relative;
+    height: 230px;
+    margin-bottom: 35px;
+    border-top-left-radius: $border-radius-size;
+    border-top-right-radius: $border-radius-size;
+    user-select: none;
+    background: url('./asset/barbarian-bg.jpg');
+}
+
+.clash-card__image--barbarian {
+    img {
+        width: 400px;
+        position: relative;
+        top: -65px;
+        left: -50px;
+    }
+
+}
+.clash-card__image--giant {
+    img {
+        // width: 400px;
+        height: 317px;
+        position: relative;
+        top: -30px;
+        left: -30px;
+    }
+}
+
+.clash-card__level {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.clash-card__level--barbarian {
+  color: $barbarian;
+}
+.clash-card__level--giant {
+  color: $giant;
+}
+
+.clash-card__unit-name {
+    font-size: 24px;
+    font-weight: 900;
+    color: black;
+}
+.clash-card__unit-description {
+    padding: 0 20px;
+    margin: 20px;
+}
+
+.clash-card__unit-stats {
+    color: white;
+    background: $barbarian;
+    border-bottom-left-radius: $border-radius-size;
+    border-bottom-right-radius: $border-radius-size;
+    display: flex;
+    .one-third {
+        flex: 1;
+        padding: 20px 15px;
+        border-right: 1px solid rgba($color: #000000, $alpha: 0.2);
+    }
+
+    sup {
+        position: absolute;
+        bottom: 4px;
+        font-size: 50%;
+    }
+    .stat {
+        position: relative;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .stat-value {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .noborder {
+        border-right: none;
+    }
+}
+
+.slick-prev {
+  left: 100px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 100px;
+  z-index: 999;
+}
+
+
+.clash-card__unit-stats--giant {
+    background: $giant;
+}

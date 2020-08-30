@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body style="height: 3000px;">
+    <button onclick="openModal()">open modal</button>
+    <div class="modal-bg">
+        <div class="modal-body">
+            <section class="modal-header">
+                <span onclick="closeModal()">x</span>
+            </section>
+            <section class="modal-content">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, placeat. Dolorem eius aut repellat reprehenderit earum odio delectus cumque dolorum.
+            </section>
+            <section class="modal-action">
+                <button onclick="closeModal()">Yes</button>
+                <button onclick="closeModal()">No</button>
+            </section>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

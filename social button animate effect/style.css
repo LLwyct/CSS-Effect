@@ -1,0 +1,57 @@
+.middle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.socialbtn {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+    background-color: #fcfcfc;
+    border-radius: 30%;
+    box-shadow: 0 5px 15px -5px #00000030;
+    font-size: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.socialbtn i {
+    line-height: 90px;
+    color: #3498db;
+    transition: .2s linear;
+}
+.socialbtn:hover i {
+    transform: scale(1.3);
+    color: #fcfcfc;
+}
+.socialbtn::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background-color: #3498db;
+    transform: rotate(45deg);
+    left: -90%;
+    top: 90%;
+}
+.socialbtn:hover::before {
+    animation: shadowSlide .7s 1;
+    top: -10%;
+    left: -10%;
+}
+
+@keyframes shadowSlide {
+    0%{
+        top: -110%;
+        left: 90%;
+    }50%{
+        top: 10%;
+        left: -30%;
+    }100%{
+        top: -10%;
+        left: -10%;
+    }
+}

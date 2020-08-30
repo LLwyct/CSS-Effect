@@ -1,0 +1,41 @@
+.modal-bg {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.modal-bg .modal-body {
+    background-color: rgba(250, 250, 250);
+    padding: 10px 30px 20px 30px;
+    width: 20%;
+    min-width: 300px;
+}
+.modal-bg .modal-body .modal-header{
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.modal-bg .modal-body .modal-header span{
+    cursor: pointer;
+}
+
+.modal-bg .modal-body > section + section {
+    margin-top: 20px;
+}
+
+.modal-active {
+    visibility: visible;
+    opacity: 1;
+}

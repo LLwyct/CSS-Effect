@@ -1,0 +1,82 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body
+{
+    background: #333;
+}
+.card
+{
+    cursor: pointer;
+    width: 340px;
+    height: 480px;
+}
+.middle
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.front,
+.back
+{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s;
+}
+.front img
+{
+    width: 100%;
+}
+.front
+{
+    transform: perspective(600px) rotateY(0deg);
+}
+.back
+{
+    background: #ecf0f1;
+    transform: perspective(600px) rotateY(-180deg);
+}
+.info
+{
+    color: #34495e;
+    text-align: center;
+    width: 100%;
+}
+.sm
+{
+    margin: 20px 0;
+}
+.sm a
+{
+    display: inline-flex;
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    color: #34495e;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #ecf0f1;
+    transition: .35s;
+    font-size: 20px;
+}
+.sm a:hover
+{
+    color: white;
+    background: #34495e;
+}
+.card:hover > .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+.card:hover > .back{
+    transform: perspective(600px) rotateY(0deg);
+}
