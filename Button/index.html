@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="btn btn-1">
+            <!-- 为什么需要额外的span：
+                因为button的after和before分别用作button的上边框和左边框
+                那么还需要一个下边框和右边框，因此这里要引入一个span标签
+                用span标签的after和before作为下边框和右边框，以达到目的
+            -->
+            <span>read more</span>
+        </button>
+    </div>
+</body>
+</html>

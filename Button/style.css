@@ -1,0 +1,94 @@
+body {
+    background: #e0e5ec;
+    font-family: 'Lato';
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    /* 通用css */
+    display: inline-block;
+    /* height: 40px; */
+    width: 130px;
+    outline: none;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-1{
+    position: relative;
+    background: linear-gradient(0deg, rgba(3, 128, 252, 0.75) 0%, rgb(3, 128, 252) 100%);
+    color: white;
+}
+.btn-1:hover {
+    background: transparent;
+    color: rgba(3, 128, 252, 0.95);
+}
+.btn-1::after,
+.btn-1::before,
+.btn-1 span::after,
+.btn-1 span::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    transition: height 0.7s ease, width 0.7s ease;
+    background: rgb(147, 190, 233);
+}
+
+.btn-1 span::after,
+.btn-1 span::before {
+    top: 0;
+    left: 0;
+}
+
+.btn-1::after {
+    width: 0;
+    height: 3px;
+}
+.btn-1::before {
+    width: 3px;
+    height: 0;
+}
+.btn-1:hover::after {
+    background: rgba(3, 128, 252, 0.95);
+    width: 100%;
+}
+.btn-1:hover::before {
+    background: rgba(3, 128, 252, 0.95);
+    height: 100%;
+}
+.btn-1 span {
+    line-height: 42px;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+
+.btn-1 span::after {
+    width: 0;
+    height: 3px;
+}
+.btn-1 span::before {
+    width: 3px;
+    height: 0;
+}
+.btn-1:hover span::after {
+    background: rgba(3, 128, 252, 0.95);
+    width: 100%;
+}
+.btn-1:hover span::before {
+    background: rgba(3, 128, 252, 0.95);
+    height: 100%;
+}
