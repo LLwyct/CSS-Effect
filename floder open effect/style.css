@@ -1,0 +1,109 @@
+@charset "UTF-8";
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.floder {
+  background-color: #ffca68;
+  cursor: pointer;
+  height: 200px;
+  width: 260px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.floder::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: -15px;
+  width: 80px;
+  height: 30px;
+  border-radius: 7px;
+  background-color: #ffca68;
+}
+
+.floder::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  border-radius: 10px;
+  background-color: #ffdb98;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.floder .paper {
+  height: 85%;
+  width: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 10px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  z-index: 0;
+}
+
+.floder .paper.p1 {
+  background-color: #ff713d;
+}
+
+.floder .paper.p2 {
+  background-color: lightblue;
+}
+
+.floder .paper.p3 {
+  background-color: lightseagreen;
+}
+
+.floder:hover::after {
+  -webkit-transform: skew(-15deg) translate(25px);
+          transform: skew(-15deg) translate(25px);
+}
+
+.floder:hover .paper:nth-child(1) {
+  /**
+                有顺序之分
+                transform: translate() rotate() !== transform: rotate() translate()
+                */
+  -webkit-transform: translate(-50%, -40%) rotate(15deg);
+          transform: translate(-50%, -40%) rotate(15deg);
+}
+
+.floder:hover .paper:nth-child(2) {
+  /**
+                有顺序之分
+                transform: translate() rotate() !== transform: rotate() translate()
+                */
+  -webkit-transform: translate(-50%, -40%) rotate(25deg);
+          transform: translate(-50%, -40%) rotate(25deg);
+}
+
+.floder:hover .paper:nth-child(3) {
+  /**
+                有顺序之分
+                transform: translate() rotate() !== transform: rotate() translate()
+                */
+  -webkit-transform: translate(-50%, -40%) rotate(35deg);
+          transform: translate(-50%, -40%) rotate(35deg);
+}
+/*# sourceMappingURL=style.css.map */

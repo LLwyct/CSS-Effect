@@ -1,0 +1,77 @@
+$bg_color: rgb(255, 202, 104);
+$front_color: rgb(255, 219, 152);
+$colors: (
+    p1: rgb(255, 113, 61),
+    p2: lightblue,
+    p3: lightseagreen
+);
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.floder {
+    background-color: $bg_color;
+    cursor: pointer;
+    height: 200px;
+    width: 260px;
+    position: relative;
+    border-radius: 10px;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: -15px;
+        width: 80px;
+        height: 30px;
+        border-radius: 7px;
+        background-color: $bg_color;
+    }
+    &::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        border-radius: 10px;
+        background-color: $front_color;
+        transition: all 0.3s ease;
+    }
+    .paper {
+        height: 85%;
+        width: 85%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        transform-origin: bottom right;
+        z-index: 0;
+        @each $key, $color in $colors {
+            &.#{$key} {
+                background-color: $color;
+            }
+        }
+    }
+    &:hover {
+        &::after {
+            transform: skew(-15deg) translate(25px);
+        }
+        @for $i from 1 to 4 {
+            .paper:nth-child(#{$i}) {
+                /**
+                有顺序之分
+                transform: translate() rotate() !== transform: rotate() translate()
+                */
+                transform: translate(-50%, -40%) rotate(#{$i}5deg);
+            }
+        }
+    }
+}
+

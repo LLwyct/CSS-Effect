@@ -1,6 +1,7 @@
 body {
     background: #e0e5ec;
     font-family: 'Lato';
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -13,8 +14,8 @@ body {
 .btn {
     /* 通用css */
     display: inline-block;
-    /* height: 40px; */
-    width: 130px;
+    height: 40px;
+    width: 150px;
     outline: none;
     position: relative;
     border: none;
@@ -25,7 +26,6 @@ body {
 }
 
 .btn-1{
-    position: relative;
     background: linear-gradient(0deg, rgba(3, 128, 252, 0.75) 0%, rgb(3, 128, 252) 100%);
     color: white;
 }
@@ -73,6 +73,8 @@ body {
     display: inline-block;
     height: 100%;
     width: 100%;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 
