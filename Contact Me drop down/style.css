@@ -1,6 +1,12 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
 }
 
 body {
@@ -12,19 +18,18 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.contact-area {
-  background-color: #eb524a;
-  border-radius: 5px;
+.contact-area > .content {
+  position: relative;
   max-width: 420px;
   min-width: 360px;
-  position: relative;
+  background-color: #eb524a;
 }
 
-.contact-area .content {
+.contact-area > .content main {
   padding: 20px 20px 45px 20px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -webkit-box-pack: justify;
@@ -35,7 +40,7 @@ body {
           align-items: center;
 }
 
-.contact-area .content img {
+.contact-area > .content main img {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -43,7 +48,7 @@ body {
   border-radius: 50%;
 }
 
-.contact-area .content .self-intro {
+.contact-area > .content main .self-intro {
   margin-left: 10%;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -52,18 +57,18 @@ body {
   letter-spacing: -0.8px;
 }
 
-.contact-area .content .self-intro h1 {
+.contact-area > .content main .self-intro h1 {
   margin: 0 0 10px 0;
   font-weight: 400;
 }
 
-.contact-area .content .self-intro p {
+.contact-area > .content main .self-intro p {
   margin: 0;
   line-height: 140%;
   word-spacing: 3px;
 }
 
-.contact-area .btn {
+.contact-area > .content .btn {
   width: 200px;
   height: 50px;
   padding: 15px;
@@ -75,7 +80,7 @@ body {
   background-color: #ffbe44;
 }
 
-.contact-area .hover-to-bottom-center {
+.contact-area > .content .hover-to-bottom-center {
   position: absolute;
   bottom: 0;
   right: 50%;
@@ -87,13 +92,13 @@ body {
   overflow: hidden;
 }
 
-.contact-area .hover-to-bottom-center span {
+.contact-area > .content .hover-to-bottom-center span {
   -webkit-transition: opacity 0.2s linear 0.4s;
   transition: opacity 0.2s linear 0.4s;
   opacity: 1;
 }
 
-.contact-area .hover-to-bottom-center svg {
+.contact-area > .content .hover-to-bottom-center svg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -104,7 +109,7 @@ body {
   transition: opacity 0.4s linear;
 }
 
-.contact-area .hover-to-bottom-center.active-button {
+.contact-area > .content .hover-to-bottom-center.active-button {
   right: 0;
   width: 65px;
   height: 65px;
@@ -112,36 +117,44 @@ body {
           transform: translate(-50%, 50%);
 }
 
-.contact-area .hover-to-bottom-center.active-button span {
+.contact-area > .content .hover-to-bottom-center.active-button span {
   opacity: 0;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
 }
 
-.contact-area .hover-to-bottom-center.active-button svg {
+.contact-area > .content .hover-to-bottom-center.active-button svg {
   opacity: 1;
   -webkit-transition-delay: 0.5s;
           transition-delay: 0.5s;
 }
 
 .contact-area .title {
-  width: 100%;
-  max-height: 0px;
+  position: relative;
+  z-index: -1;
   overflow: hidden;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: #c63535;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 0.5s ease 0.4s;
+  transition: all 0.5s ease 0.4s;
 }
 
 .contact-area .title.active-title {
-  max-height: 100px;
+  -webkit-transform: scaleY(1) translateY(-10%);
+          transform: scaleY(1) translateY(-10%);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 
 .contact-area .title.active-title p {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  opacity: 1;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
 }
 
 .contact-area .title p {
@@ -150,10 +163,123 @@ body {
   color: #ffbe44;
   font-size: 24px;
   margin: 0;
-  -webkit-transition: all 0.5s linear 0.2s;
-  transition: all 0.5s linear 0.2s;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
   font-weight: 500;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  opacity: 0;
+}
+
+.contact-area nav {
+  max-height: 0px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.contact-area nav.active-nav {
+  max-height: 600px;
+}
+
+.contact-area nav.active-nav a {
+  opacity: 1;
+}
+
+.contact-area nav.active-nav a:nth-child(1) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.contact-area nav.active-nav a:nth-child(2) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.contact-area nav.active-nav a:nth-child(3) {
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
+}
+
+.contact-area nav a {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  padding: 20px 20px;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 15px 0;
+  text-decoration: none;
+}
+
+.contact-area nav a.gmail svg {
+  background-color: #d14836;
+}
+
+.contact-area nav a.gmail .content h1 {
+  color: #d14836;
+}
+
+.contact-area nav a.facebook svg {
+  background-color: #3b5998;
+}
+
+.contact-area nav a.facebook .content h1 {
+  color: #3b5998;
+}
+
+.contact-area nav a.twitter svg {
+  background-color: #1da1f2;
+}
+
+.contact-area nav a.twitter .content h1 {
+  color: #1da1f2;
+}
+
+.contact-area nav a .icon {
+  margin-right: 20px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+}
+
+.contact-area nav a .icon svg {
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+}
+
+.contact-area nav a .icon svg path {
+  fill: #ffffff;
+}
+
+.contact-area nav a .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.contact-area nav a .content h1 {
+  font-weight: 400;
+}
+
+.contact-area nav a .content span {
+  color: #b3b3b3;
+}
+
+.contact-area nav a .arrow {
+  background-color: transparent !important;
+}
+
+.contact-area nav a .arrow path {
+  fill: gray;
 }
 /*# sourceMappingURL=style.css.map */

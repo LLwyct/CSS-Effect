@@ -12,10 +12,14 @@ $gmail: #d14836;
 $facebook: #3b5998;
 $twitter: #1da1f2;
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
-
+body,h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+}
 body {
     background-color: $bg-color;
     min-height: 100vh;
@@ -25,97 +29,103 @@ body {
 }
 
 .contact-area {
-    background-color: $color-1;
-    border-radius: 5px;
-    max-width: 420px;
-    min-width: 360px;
-    position: relative;
-    .content {
-        padding: 20px 20px 45px 20px;
-        display: inline-flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-items: center;
-        img {
-            flex: 0 0 auto;
-            max-width: 12ch;
-            border-radius: 50%;
-        }
-        .self-intro {
-            margin-left: 10%;
-            flex: 1 1 auto;
-            color: $white;
-            letter-spacing: -0.8px;
-            h1 {
-                margin: 0 0 10px 0;
-                font-weight: 400;
+    & > .content {
+        // border-radius: 5px;
+        position: relative;
+        max-width: 420px;
+        min-width: 360px;
+        background-color: $color-1;
+        main {
+            padding: 20px 20px 45px 20px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                flex: 0 0 auto;
+                max-width: 12ch;
+                border-radius: 50%;
             }
-            p {
-                margin: 0;
-                line-height: 140%;
-                word-spacing: 3px;
+            .self-intro {
+                margin-left: 10%;
+                flex: 1 1 auto;
+                color: $white;
+                letter-spacing: -0.8px;
+                h1 {
+                    margin: 0 0 10px 0;
+                    font-weight: 400;
+                }
+                p {
+                    margin: 0;
+                    line-height: 140%;
+                    word-spacing: 3px;
+                }
             }
         }
-        
-    }
-    .btn {
-        width: 200px;
-        height: 50px;
-        padding: 15px;
-        outline: none;
-        border: none;
-        border-radius: 40px;
-        cursor: pointer;
-        color: $color-2;
-        background-color: $color-3;
-    }
-    .hover-to-bottom-center {
-        position: absolute;
-        bottom: 0;
-        right: 50%;
-        transform: translate(50%, 50%);
-        font-size: 16px;
-        transition: all 0.6s 0.2s;
-        overflow: hidden;
-        span {
-            transition: opacity 0.2s linear 0.4s;
-            opacity: 1;
+
+        .btn {
+            width: 200px;
+            height: 50px;
+            padding: 15px;
+            outline: none;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            color: $color-2;
+            background-color: $color-3;
         }
-        svg {
+        .hover-to-bottom-center {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.4s linear;
-        }
-        &.active-button {
-            right: 0;
-            width: 65px;
-            height: 65px;
-            transform: translate(-50%, 50%);
+            bottom: 0;
+            right: 50%;
+            transform: translate(50%, 50%);
+            font-size: 16px;
+            transition: all 0.6s 0.2s;
+            overflow: hidden;
             span {
-                opacity: 0;
-                transition-delay: 0s;
+                transition: opacity 0.2s linear 0.4s;
+                opacity: 1;
             }
             svg {
-                opacity: 1;
-                transition-delay: 0.5s;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 0.4s linear;
+            }
+            &.active-button {
+                right: 0;
+                width: 65px;
+                height: 65px;
+                transform: translate(-50%, 50%);
+                span {
+                    opacity: 0;
+                    transition-delay: 0s;
+                }
+                svg {
+                    opacity: 1;
+                    transition-delay: 0.5s;
+                }
             }
         }
     }
     .title {
-        width: 100%;
-        max-height: 0px;
+        position: relative;
+        z-index: -1;
         overflow: hidden;
+        transform: scaleY(0);
+        transform-origin: top center;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         background-color: $color-2;
-        transition: all 1s ease;
+        transition: all 0.5s ease 0.4s;
         &.active-title {
-            max-height: 100px;
+            transform: scaleY(1) translateY(-10%);
+            transition-delay: 0s;
             p {
-                transform: scale(1);
+                opacity: 1;
+                transition-delay: 0.4s;
             }
         }
         p {
@@ -124,9 +134,103 @@ body {
             color: $color-3;
             font-size: 24px;
             margin: 0;
-            transition: all 0.5s linear 0.2s;
+            transition: opacity 0.5s linear;
             font-weight: 500;
-            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    nav {
+        max-height: 0px;
+        transition: all 1s;
+        overflow: hidden;
+        &.active-nav {
+            max-height: 600px;
+
+            a {
+                opacity: 1;
+                &:nth-child(1) {
+                    transition-delay: 0.3s;
+                }
+                &:nth-child(2) {
+                    transition-delay: 0.5s;
+                }
+                &:nth-child(3) {
+                    transition-delay: 0.7s;
+                }
+            }
+        }
+        a {
+            transition: opacity 0.5s;
+            padding: 20px 20px;
+            opacity: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $white;
+            border-radius: 5px;
+            margin: 15px 0;
+            text-decoration: none;
+            &.gmail {
+                svg {
+                    background-color: $gmail;
+                }
+                .content {
+                    h1 {
+                        color: $gmail;
+                    }
+                }
+            }
+            &.facebook {
+                svg {
+                    background-color: $facebook;
+                }
+                .content {
+                    h1 {
+                        color: $facebook;
+                    }
+                }
+            }
+            &.twitter {
+                svg {
+                    background-color: $twitter;
+                }
+                .content {
+                    h1 {
+                        color: $twitter;
+                    }
+                }
+            }
+            .icon {
+                margin-right: 20px;
+                border-radius: 50%;
+                height: 50px;
+                width: 50px;
+                overflow: hidden;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    padding: 14px;
+                    path {
+                        fill: $white;
+                    }
+                }
+            }
+            .content {
+                flex: 1 0 auto;
+                h1 {
+                    font-weight: 400;
+                }
+                span {
+                    color: darken($white, 30%);
+                }
+            }
+            .arrow {
+                background-color: transparent !important;
+                path {
+                    fill: darken($white, 50%);
+                }
+            }
         }
     }
 }
