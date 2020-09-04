@@ -1,0 +1,159 @@
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #051321;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.contact-area {
+  background-color: #eb524a;
+  border-radius: 5px;
+  max-width: 420px;
+  min-width: 360px;
+  position: relative;
+}
+
+.contact-area .content {
+  padding: 20px 20px 45px 20px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-area .content img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  max-width: 12ch;
+  border-radius: 50%;
+}
+
+.contact-area .content .self-intro {
+  margin-left: 10%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  color: #ffffff;
+  letter-spacing: -0.8px;
+}
+
+.contact-area .content .self-intro h1 {
+  margin: 0 0 10px 0;
+  font-weight: 400;
+}
+
+.contact-area .content .self-intro p {
+  margin: 0;
+  line-height: 140%;
+  word-spacing: 3px;
+}
+
+.contact-area .btn {
+  width: 200px;
+  height: 50px;
+  padding: 15px;
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  color: #c63535;
+  background-color: #ffbe44;
+}
+
+.contact-area .hover-to-bottom-center {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  font-size: 16px;
+  -webkit-transition: all 0.6s 0.2s;
+  transition: all 0.6s 0.2s;
+  overflow: hidden;
+}
+
+.contact-area .hover-to-bottom-center span {
+  -webkit-transition: opacity 0.2s linear 0.4s;
+  transition: opacity 0.2s linear 0.4s;
+  opacity: 1;
+}
+
+.contact-area .hover-to-bottom-center svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: opacity 0.4s linear;
+  transition: opacity 0.4s linear;
+}
+
+.contact-area .hover-to-bottom-center.active-button {
+  right: 0;
+  width: 65px;
+  height: 65px;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+.contact-area .hover-to-bottom-center.active-button span {
+  opacity: 0;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.contact-area .hover-to-bottom-center.active-button svg {
+  opacity: 1;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.contact-area .title {
+  width: 100%;
+  max-height: 0px;
+  overflow: hidden;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #c63535;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.contact-area .title.active-title {
+  max-height: 100px;
+}
+
+.contact-area .title.active-title p {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.contact-area .title p {
+  padding: 15px 20px;
+  display: inline-block;
+  color: #ffbe44;
+  font-size: 24px;
+  margin: 0;
+  -webkit-transition: all 0.5s linear 0.2s;
+  transition: all 0.5s linear 0.2s;
+  font-weight: 500;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+/*# sourceMappingURL=style.css.map */

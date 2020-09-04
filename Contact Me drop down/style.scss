@@ -1,0 +1,132 @@
+$bg-color: #051321;
+$color-1: #eb524a;
+$color-2: #c63535;
+$color-3: #ffbe44;
+
+$white: #ffffff;
+$black: #000000;
+
+// Social media
+
+$gmail: #d14836;
+$facebook: #3b5998;
+$twitter: #1da1f2;
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bg-color;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.contact-area {
+    background-color: $color-1;
+    border-radius: 5px;
+    max-width: 420px;
+    min-width: 360px;
+    position: relative;
+    .content {
+        padding: 20px 20px 45px 20px;
+        display: inline-flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            flex: 0 0 auto;
+            max-width: 12ch;
+            border-radius: 50%;
+        }
+        .self-intro {
+            margin-left: 10%;
+            flex: 1 1 auto;
+            color: $white;
+            letter-spacing: -0.8px;
+            h1 {
+                margin: 0 0 10px 0;
+                font-weight: 400;
+            }
+            p {
+                margin: 0;
+                line-height: 140%;
+                word-spacing: 3px;
+            }
+        }
+        
+    }
+    .btn {
+        width: 200px;
+        height: 50px;
+        padding: 15px;
+        outline: none;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        color: $color-2;
+        background-color: $color-3;
+    }
+    .hover-to-bottom-center {
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translate(50%, 50%);
+        font-size: 16px;
+        transition: all 0.6s 0.2s;
+        overflow: hidden;
+        span {
+            transition: opacity 0.2s linear 0.4s;
+            opacity: 1;
+        }
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.4s linear;
+        }
+        &.active-button {
+            right: 0;
+            width: 65px;
+            height: 65px;
+            transform: translate(-50%, 50%);
+            span {
+                opacity: 0;
+                transition-delay: 0s;
+            }
+            svg {
+                opacity: 1;
+                transition-delay: 0.5s;
+            }
+        }
+    }
+    .title {
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: $color-2;
+        transition: all 1s ease;
+        &.active-title {
+            max-height: 100px;
+            p {
+                transform: scale(1);
+            }
+        }
+        p {
+            padding: 15px 20px;
+            display: inline-block;
+            color: $color-3;
+            font-size: 24px;
+            margin: 0;
+            transition: all 0.5s linear 0.2s;
+            font-weight: 500;
+            transform: scale(0);
+        }
+    }
+}
