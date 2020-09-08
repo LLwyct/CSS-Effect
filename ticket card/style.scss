@@ -1,0 +1,167 @@
+$bg-color: #e6e5e1;
+$shadow-grey: #d3d3d5;
+$orange: #da4d1d;
+
+$img-url1: "https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80";
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins';
+    background-color: $bg-color;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.container {
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    i {
+        opacity: 0;
+        font-size: 18px;
+        cursor: pointer;
+        color: #fff;
+        will-change: transform;
+        transform: scale(0.1);
+        transition: all 0.2s ease;
+    }
+    .card {
+        width: 500px;
+        height: 200px;
+        background-color: #fff;
+        overflow: hidden;
+        position: relative;
+        
+        &:before {
+            z-index: 2;
+            content: "";
+            position: absolute;
+            transform: translate(0, -50%);
+            left: 32px;
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 16px;
+            background-color: $bg-color;
+        }
+        &:after {
+            z-index: 2;
+            content: "";
+            position: absolute;
+            bottom: -16px;
+            left: 32px;
+            transform: translate(0, -50%);
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 16px;
+            background-color: $bg-color;
+        }
+        .fa-arrow-right {
+            z-index: 4;
+            position: absolute;
+            right: 75px;
+            bottom: 25px;
+            font-size: 40px;
+        }
+        p{
+            position: absolute;
+            z-index: 4;
+            top: 20px;
+            right: 70px;
+            font-size: 14px;
+            writing-mode: vertical-rl;
+            transition: all 0.2s ease;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        h2 {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            right: 130px;
+            color: white;
+            font-size: 60px;
+            font-weight: 800;
+        }
+        .pic {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            width: 400px;
+            height: 200px;
+            background-image: url($img-url1);
+            background-size: 100% 100%;
+            transition: filter 0.2s ease;
+            filter: grayscale(100%);
+        }
+        &:hover .pic{
+            filter: none;
+        }
+        ul {
+            z-index: 1;
+            position: absolute;
+            left: 40px;
+            top: 5px;
+            list-style-type: none;
+            li {
+                width: 2px;
+                height: 2px;
+                border-radius: 2px;
+                margin: 6px 0;
+                background-color: $bg-color;
+            }
+        }
+        .social {
+            position: absolute;
+            z-index: 3;
+            left: 60px;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 180px;
+            height: 64px;
+            border-radius: 80px;
+        }
+        &:hover i {
+            opacity: 1;
+            transform: scale(1);
+        }
+        &:hover button {
+            transform: scale(500);
+            opacity: 1;
+        }
+
+        &:hover p {
+            color: #fff;
+        }
+        button {
+            opacity: 0;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            width: 1px;
+            height: 1px;
+            background-color: $orange;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            outline:none;
+            transition: all 0.3s ease;
+            mix-blend-mode: hard-light;
+            z-index: 3;
+            i {
+                font-size: 3rem;
+            }
+        }
+    }
+    
+}
